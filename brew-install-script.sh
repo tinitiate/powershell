@@ -1,5 +1,10 @@
 #!/bin/sh
 
+export HOMEBREW_BREW_GIT_REMOTE="..."  # put your Git mirror of Homebrew/brew here
+export HOMEBREW_CORE_GIT_REMOTE="..."  # put your Git mirror of Homebrew/homebrew-core here
+
+/bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install.sh)"
+
 brew_install() {
     echo "\n Installing $1"
     if brew list $1 &> /dev/null; then
