@@ -1,5 +1,3 @@
-#!/bin/sh
-# Homebrew Script
 if brew --version > /dev/null; then 
   echo "brew is already installed"
 else 
