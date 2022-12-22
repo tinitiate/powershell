@@ -1,5 +1,18 @@
-# powershell
+# Mac Installations
 
+From the Terminal run the command:
+```
 curl --remote-name https://raw.githubusercontent.com/tinitiate/powershell/main/script.sh
+```
+Run the Following Command:
 
-curl --remote-name https://github.com/tinitiate/powershell/edit/main/bash-install-script
+  ```
+  chmod 755 /Users/{username}/script.sh
+  ```
+  - Replace {username} with your Mac UserName.
+  
+Run the Following Command:
+  
+  ```
+  ./script.sh
+  ```
