@@ -1,13 +1,16 @@
-#!/bin/bash 
-if brew --version > /dev/null; then 
-  echo "brew is already installed"
-else 
-    echo "Installing brew..."
-    /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
-    
-if python3 --version > /dev/null; then 
-  echo "python3 is already installed"
-else 
-    echo "Installing python3..."
-    brew install python
+#!/bin/sh
 
+brew_install() {
+    echo "\n Installing $1"
+    if brew list $1 &> /dev/null; then
+        echo "${1} is already installed"
+    else 
+        brew install $1 && echo "$1 is installed"
+    fi
+}
+
+brew_install "python" 
+brew_install "visual-studio-code" 
+brew_install "awscli" 
+brew_install "aws-sam-cli" 
+brew_install "dbeaverlite" 
