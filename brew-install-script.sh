@@ -13,5 +13,11 @@ brew_install "python"
 brew_install "visual-studio-code" 
 brew_install "awscli" 
 brew_install "aws-sam-cli" 
-brew_install "dbeaverlite" 
-brew_install "brew-pip" 
+# brew_install "dbeaverlite" 
+brew_install "brew-pip"
+brew install --cask dbeaver-community
+pip3 install PyMySQL
+pip3 install django
+pip3 install djangorestframework
+pip3 install pytz 
+pip3 install psycopg2
