@@ -20,4 +20,4 @@ pip3 install PyMySQL
 pip3 install django
 pip3 install djangorestframework
 pip3 install pytz 
-pip3 install psycopg2
+pip3 install psycopg2-binary
