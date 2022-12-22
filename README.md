@@ -19,12 +19,6 @@
 - Run the Following Command:
 
   ```
-  chmod 755 /Users/{username}/script.sh
+  chmod 755 /Users/`whoami`/script.sh && ./script.sh
   ```
-  - Replace {username} with your Mac UserName.
-  
-- Run the Following Command:
-  
-  ```
-  ./script.sh
-  ```
+
