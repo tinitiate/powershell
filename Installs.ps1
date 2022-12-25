@@ -29,7 +29,7 @@ else{
 $checksamcli = powershell sam --version
 if(-not($checksamcli)){
     Write-Output "Seems SAM CLI is not installed, installing now"
-    powershell choco install awssamcli --version=1.24.1 -y
+    powershell choco install awssamcli --version=1.60.0 -y
 }
 else{
     Write-Output "SAM CLI Version $checksamcli is already installed"
