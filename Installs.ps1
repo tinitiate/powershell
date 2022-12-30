@@ -91,8 +91,9 @@ else{
     Write-Output "Pip is not installed"
 }
 
-$checknotepad = powershell ($chocoPackages -like 'notepadplusplus*').Count -ge 1
-if(-not($checknotepad)){
+$w64=Get-ItemProperty HKLM:\Software\Wow6432Node\Microsoft\Windows\CurrentVersion\Uninstall\* | where-Object DisplayName -like 'NotePad++*'
+$w32=Get-ItemProperty HKLM:\Software\Microsoft\Windows\CurrentVersion\Uninstall\*  | where-Object DisplayName -like 'NotePad++*'
+if(-not($w64-or $w32)){
     Write-Output "Seems notepad++ is not installed, installing now"
 
     choco install notepadplusplus
