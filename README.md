@@ -5,7 +5,7 @@
 - Run the Following command:
 
   ```
-  Invoke-WebRequest -Uri https://raw.githubusercontent.com/tinitiate/powershell/main/Installs.ps1 -OutFile .\install.ps1; .\install.ps1
+  Set-ExecutionPolicy Bypass -Scope Process -Force;Invoke-WebRequest -Uri https://raw.githubusercontent.com/tinitiate/powershell/main/Installs.ps1 -OutFile .\install.ps1; .\install.ps1
   ```
 
 
