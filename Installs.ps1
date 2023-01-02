@@ -105,14 +105,22 @@ else{
     Write-Output "notepad++ is already installed"
 }
 
-# $checkdocker = ((gp HKLM:\SOFTWARE\Microsoft\Windows\CurrentVersion\Uninstall\*).DisplayName -Match "Docker").Length -gt 0
-# if(-not($checkdocker)){
-    # Write-Output "Seems Docker is not installed, installing now"
-    # powershell choco install docker-desktop -y
-# }
-# else{
-    # Write-Output "Docker is already installed"
-# }
+$check = ((gp HKLM:\SOFTWARE\Microsoft\Windows\CurrentVersion\Uninstall\*).DisplayName -Match "git").Length -gt 0
+if(-not($check)){
+    Write-Output "Seems Git is not installed, installing now"
+    powershell choco install git -y
+}
+else{
+    Write-Output "Git is already installed"
+}
+$checkdocker = ((gp HKLM:\SOFTWARE\Microsoft\Windows\CurrentVersion\Uninstall\*).DisplayName -Match "Docker").Length -gt 0
+if(-not($checkdocker)){
+    Write-Output "Seems Docker is not installed, installing now"
+    powershell choco install docker-desktop -y
+ }
+ else{
+    Write-Output "Docker is already installed"
+ }
 
 # if($checkdocker){
     # Write-Output "Seems Docker is installed, Enabling feature(s)"
