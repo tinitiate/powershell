@@ -17,22 +17,22 @@ else{
     Write-Output "Python Version $checkpython is already installed"
 }
 
-$checkawscli = powershell aws --version
+$checkawscli = ((gp HKLM:\SOFTWARE\Microsoft\Windows\CurrentVersion\Uninstall\*).DisplayName -Match "aws").Length -gt 0
 if(-not($checkawscli)){
     Write-Output "Seems AWS CLI is not installed, installing now"
     powershell choco install awscli -y
 }
 else{
-    Write-Output "AWS CLI Version $checkawscli is already installed"
+    Write-Output "AWS CLI Version is already installed"
 }
 
-$checksamcli = powershell sam --version
+$checksamcli = ((gp HKLM:\SOFTWARE\Microsoft\Windows\CurrentVersion\Uninstall\*).DisplayName -Match "sam").Length -gt 0
 if(-not($checksamcli)){
     Write-Output "Seems SAM CLI is not installed, installing now"
     powershell choco install awssamcli --version=1.60.0 -y
 }
 else{
-    Write-Output "SAM CLI Version $checksamcli is already installed"
+    Write-Output "SAM CLI Version is already installed"
 }
 
 # $checkssm = powershell session-manager-plugin
