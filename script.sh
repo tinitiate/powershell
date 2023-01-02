@@ -21,6 +21,8 @@ brew_install "awscli"
 brew_install "aws-sam-cli" 
 brew_install "dbeaver-community" 
 brew_install "brew-pip"
+brew_install "git"
+brew_install "docker"
 pip3 install PyMySQL
 pip3 install django
 pip3 install djangorestframework
