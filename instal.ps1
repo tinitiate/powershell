@@ -17,6 +17,8 @@ foreach ($package in $packages) {
         if ($version -lt $latest) {
             Write-Host "$package found, but outdated. Upgrading to $latest..." -ForegroundColor Yellow
             choco upgrade $package -y
+        } else {
+            Write-Host "$package is already up to date." -ForegroundColor Green
         }
     }
 }
@@ -33,6 +35,8 @@ if (!(Get-Command pip -ErrorAction SilentlyContinue)) {
         if (!(pip freeze | Select-String -Pattern $package)) {
             Write-Host "$package not found. Installing $package..." -ForegroundColor Yellow
             pip install $package
+        } else {
+            Write-Host "$package is already up to date." -ForegroundColor Green
         }
     }
 }
@@ -43,16 +47,17 @@ dism.exe /online /enable-feature /featurename:Microsoft-Windows-Subsystem-Linux 
 
 # Install and enable WSL 2.
 Write-Host "Installing and enabling WSL 2..." -ForegroundColor Yellow
-dism.exe /online /enable-feature /featurename:VirtualMachinePlatform /all /norestart
-$wsl = wsl --list --verbose | Select-String "Ubuntu"
-if ($wsl -eq $null) {
+$wsl2 = wsl --status | Select-String "WSL 2"
+if ($wsl2 -eq $null) {
     wsl --install
 } else {
-    wsl --set-version Ubuntu 2
+    Write-Host "WSL 2 is already installed and enabled." -ForegroundColor Green
 }
 
 # Install Docker Desktop.
 if (!(Get-Command docker -ErrorAction SilentlyContinue)) {
     Write-Host "Docker not found. Installing Docker Desktop..." -ForegroundColor Yellow
     choco install docker-desktop -y
+} else {
+    Write-Host "Docker is already installed." -ForegroundColor Green
 }
