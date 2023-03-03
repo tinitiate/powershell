@@ -11,7 +11,7 @@ $checkpython= powershell python --version
 
 if(-not($checkpython)){
     Write-Output "Seems Python is not installed, installing now"
-    powershell choco install python
+    powershell choco install python -y
 }
 else{
     Write-Output "Python Version $checkpython is already installed"
