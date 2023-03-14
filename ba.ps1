@@ -45,7 +45,7 @@ $dbeaver_installed = Get-ItemProperty HKLM:\Software\Microsoft\Windows\CurrentVe
 
 if (!$dbeaver_installed) {
     # Install DBeaver Community Edition
-    Invoke-WebRequest -Uri https://dbeaver.io/files/dbeaver-ce-latest-x86_64.msi -OutFile dbeaver-ce-latest-x86_64.msi
+    Invoke-WebRequest -Uri https://dbeaver.io/files/dbeaver-ce-latest-x86_64-setup.exe
     Start-Process msiexec.exe -Wait -ArgumentList '/I dbeaver-ce-latest-x86_64.msi /quiet /norestart'
 }
 else {
