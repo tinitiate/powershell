@@ -7,14 +7,13 @@ else{
     Write-Output "Chocolatey Version $checkchoco is already installed"
 }
 
-$checkpython= powershell python --version
-
-if(-not($checkpython)){
-    Write-Output "Seems Python is not installed, installing now"
-    powershell choco install python -y
-}
-else{
-    Write-Output "Python Version $checkpython is already installed"
+# Check if Python 3.9 is installed
+if ((python --version 2>&1) -match "Python 3.9") {
+    Write-Host "Python 3.9 is already installed."
+} 
+else {
+    Write-Host "Python 3.9 is not installed. Installing Python 3.9 using Chocolatey package manager."
+    choco install python -y
 }
 
 $checkawscli = ((gp HKLM:\SOFTWARE\Microsoft\Windows\CurrentVersion\Uninstall\*).DisplayName -Match "aws").Length -gt 0
