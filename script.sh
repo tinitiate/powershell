@@ -15,7 +15,9 @@ brew_install() {
     fi
 }
 
-brew_install "python" 
+brew_install "pyenv"
+pyenv install 3.9.10
+pyenv global 3.9.10
 brew_install "visual-studio-code" 
 brew_install "awscli" 
 brew_install "aws-sam-cli" 
@@ -23,6 +25,15 @@ brew_install "dbeaver-community"
 brew_install "brew-pip"
 brew_install "git"
 brew_install "docker"
+
+
+# Install VS Code extensions
+echo "\n Installing VS Code extensions"
+code --install-extension ms-python.python
+code --install-extension amazonwebservices.aws-toolkit-vscode
+code --install-extension ms-vscode.PowerShell
+
+# Install Python packages
 pip3 install PyMySQL
 pip3 install django
 pip3 install djangorestframework
