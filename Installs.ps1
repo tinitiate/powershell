@@ -132,29 +132,9 @@ if(-not($checkdocker)){
     Write-Output "Docker is already installed"
  }
  
- # Check if AWS Toolkit extension for Visual Studio Code is installed
- if ((Get-Module -Name AWS.Tools.Installer -ListAvailable)) {
-    Write-Host "AWS Toolkit for Visual Studio Code is installed."
-}
-else {
-    Write-Host "AWS Toolkit for Visual Studio Code is not installed. Installing now..."
-    Install-Module -Name AWS.Tools.Installer -Force
-}
-
-# Check if PowerShell extension for Visual Studio Code is installed
-if ((Get-Module -Name Microsoft.Powershell.Extension.VSCode -ListAvailable)) {
-    Write-Host "PowerShell extension for Visual Studio Code is installed."
-} else {
-    Write-Host "PowerShell extension for Visual Studio Code is not installed. Installing now..."
-    Install-Module -Name Microsoft.Powershell.Extension.VSCode -Force
-}
-
-# Check if Python extension for Visual Studio Code is installed
-if ((Get-Module -Name ms-python.python -ListAvailable)) {
-    Write-Host "Python extension for Visual Studio Code is installed."
-} else {
-    Write-Host "Python extension for Visual Studio Code is not installed. Installing now..."
-    Install-Module -Name ms-python.python -Force
-}
+# Install Visual Studio Code extensions
+code --install-extension ms-python.python
+code --install-extension ms-vscode.PowerShell
+code --install-extension amazonwebservices.aws-toolkit-vscode
 
 
