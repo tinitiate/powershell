@@ -19,7 +19,7 @@ iex (Invoke-WebRequest -Uri "https://raw.githubusercontent.com/tinitiate/powersh
   ```
   chmod 755 /Users/`whoami`/script.sh && ./script.sh
   ```
-## SQL AZureS Course Installtions 
+## SQL Azure Course Installtions 
 ### Windows
 ```ps1
 iex (Invoke-WebRequest -Uri "https://raw.githubusercontent.com/tinitiate/powershell/main/sql-install.ps1" -UseBasicParsing).Content
