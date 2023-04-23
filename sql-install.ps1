@@ -34,7 +34,7 @@ if (!$wsl2Enabled) {
 if (!(Get-Command docker -ErrorAction SilentlyContinue)) {
     # Install Docker Desktop
     Invoke-WebRequest -Uri https://desktop.docker.com/win/stable/Docker%20Desktop%20Installer.exe -OutFile Docker%20Desktop%20Installer.exe
-    Start-Process -FilePath Docker%20Desktop%20Installer.exe -ArgumentList '/silent' -Wait
+    Start-Process -FilePath Docker%20Desktop%20Installer.exe -ArgumentList '/S' -Wait
     Remove-Item -Path Docker%20Desktop%20Installer.exe
     Write-Host "Docker installed."
 } else {
