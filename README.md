@@ -1,5 +1,5 @@
 # Software Installations
-## Python AWS Course Installtions 
+## Python AWS Course Installations 
 ### Windows
 - Open the PowerShell as administrator 
 - Run the Following command:
@@ -19,7 +19,7 @@ iex (Invoke-WebRequest -Uri "https://raw.githubusercontent.com/tinitiate/powersh
   ```
   chmod 755 /Users/`whoami`/script.sh && ./script.sh
   ```
-## SQL Azure Course Installtions 
+## SQL Azure Course Installations 
 ### Windows
 - Open the PowerShell as administrator 
 - Run the Following command:
