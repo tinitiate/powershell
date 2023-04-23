@@ -42,7 +42,7 @@ if (!(Get-Command docker -ErrorAction SilentlyContinue)) {
 }
 
 # Install DBeaver
-if (!(Get-Command dbeaver -ErrorAction SilentlyContinue)) {
+if (!(Test-Path "C:\Program Files\DBeaver\dbeaver.exe")) {
     # Install DBeaver
     Invoke-WebRequest -Uri https://dbeaver.io/files/dbeaver-ce-latest-x86_64-setup.exe -OutFile dbeaver-ce-latest-x86_64-setup.exe
     Start-Process -FilePath dbeaver-ce-latest-x86_64-setup.exe -ArgumentList '/S' -Wait
