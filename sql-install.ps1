@@ -51,3 +51,14 @@ if (!(Get-Command dbeaver -ErrorAction SilentlyContinue)) {
 } else {
     Write-Host "DBeaver is already installed."
 }
+
+# Check if Git is installed (if not, install it)
+if (!(Get-Command git -ErrorAction SilentlyContinue)) {
+    # Install Git
+    Invoke-WebRequest -Uri https://github.com/git-for-windows/git/releases/download/v2.31.1.windows.1/Git-2.31.1-64-bit.exe -OutFile Git-2.31.1-64-bit.exe
+    Start-Process -FilePath Git-2.31.1-64-bit.exe -ArgumentList '/SILENT' -Wait
+    Remove-Item -Path Git-2.31.1-64-bit.exe
+    Write-Host "Git installed."
+} else {
+    Write-Host "Git is already installed."
+}
