@@ -4,11 +4,12 @@
 - Open the PowerShell as administrator 
 - Run the Following command:
 
-  ```
-  Set-ExecutionPolicy Bypass -Scope Process -Force;Invoke-WebRequest -Uri https://raw.githubusercontent.com/tinitiate/powershell/main/Installs.ps1 -OutFile .\install.ps1; .\install.ps1
-  ```
-```
+```ps1
 iex (Invoke-WebRequest -Uri "https://raw.githubusercontent.com/tinitiate/powershell/main/Installs.ps1" -UseBasicParsing).Content
+```
+
+```ps1
+iex (Invoke-WebRequest -Uri "https://raw.githubusercontent.com/tinitiate/powershell/main/sql-installs.ps1" -UseBasicParsing).Content
 ```
 
 ## MAC
