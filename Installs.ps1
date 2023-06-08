@@ -132,9 +132,6 @@ if(-not($checkdocker)){
     Write-Output "Docker is already installed"
  }
  
-# Install Visual Studio Code extensions
-code --install-extension ms-python.python
-code --install-extension ms-vscode.PowerShell
-code --install-extension amazonwebservices.aws-toolkit-vscode
+
 
 
